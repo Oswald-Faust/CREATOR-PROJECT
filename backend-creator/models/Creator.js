@@ -22,7 +22,7 @@ const creatorSchema = new mongoose.Schema({
   },
   numeroTelephone: {
     type: String,
-    required: true
+    required: false
   },
   motDePasse: {
     type: String,

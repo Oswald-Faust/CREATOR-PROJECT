@@ -34,7 +34,7 @@ const Signup = () => {
         : '/api/auth/register-entreprise';
       
       // On envoie les données à notre backend !
-      const response = await axios.post(`http://localhost:5000${route}`, {
+      const response = await axios.post(`http://localhost:5001${route}`, {
         nom: formData.nom,
         prenom: formData.prenom,
         nomEntreprise: formData.nom, // Si c'est une entreprise, on utilise le champ nom pour nomEntreprise

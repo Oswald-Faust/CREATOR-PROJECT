@@ -8,6 +8,8 @@ const Login = () => {
     email: '',
     motDePasse: ''
   });
+
+  
   const [message, setMessage] = useState('');
 
   const handleChange = (e) => {
@@ -18,13 +20,11 @@ const Login = () => {
     e.preventDefault();
     try {
       // On appelle la route de connexion (qui gère créateurs ET entreprises)
-      const response = await axios.post('http://localhost:5000/api/auth/login', formData);
+      const response = await axios.post('http://localhost:5001/api/auth/login', formData);
       
       // On récupère le fameux "Token" de la réponse !
       const token = response.data.token;
       
-      // On le sauvegarde dans le "localStorage" du navigateur
-      // Comme ça, même si on rafraîchit la page, on reste connecté
       localStorage.setItem('token', token);
       
       setMessage('Connexion réussie ! Redirection...');
